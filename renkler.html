@@ -13,14 +13,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
         rel="stylesheet">
-    <title>Arabam Kaç Yakar?</title>
+    <title>Blog</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body class="text-gray-600 font-roboto">
 
     <div id="navbar-placeholder"></div>
-
 
 
     <div class="min-h-screen bg-gray-200 flex justify-center items-center">
@@ -71,95 +70,15 @@
         </div>
     </div>
 
-
-
-
     <div id="footer-placeholder"></div>
 
     <script>
-
         $(function () {
             $('#navbar-placeholder').load('navbar.html');
             $('#footer-placeholder').load('footer.html');
         });
-
-        function calculateCost() {
-
-            var distance = parseFloat(document.getElementById('distance').value);
-            var costPerKilometer = 2.58;
-            var totalCost = distance * costPerKilometer;
-
-            if (isNaN(distance)) {
-                document.getElementById('result').textContent = "Lütfen geçerli bir değer giriniz..";
-                console.log("sadfa")
-            } else {
-                document.getElementById('result').textContent = `Toplam yakıt maliyeti: ${totalCost.toFixed(2)} TL`;
-            }
-
-        }
-
-        function setDistance(route) {
-            const distanceInput = document.getElementById('distance');
-            switch (route) {
-                case 'Istanbul - Izmir':
-                    distanceInput.value = 460;
-                    break;
-                case 'Istanbul - Ankara':
-                    distanceInput.value = 425;
-                    break;
-                case 'Istanbul - Antalya':
-                    distanceInput.value = 680;
-                    break;
-                case 'Ankara - Izmir':
-                    distanceInput.value = 590;
-                    break;
-                case 'Ankara - Antalya':
-                    distanceInput.value = 480;
-                    break;
-                case 'Istanbul - Mugla':
-                    distanceInput.value = 650;
-                    break;
-
-                default:
-                    break;
-            }
-        }
-        /*
-                async function fetchFuelPrice(city) {
-                    try {
-                        const response = await fetch(`http://hasanadiguzel.com.tr/api/akaryakit/sehir=${city}`);
-                        const data = await response.json();
-                        return 
-                    } catch (error) {
-                        console.error('Benzin fiyatı alınamadı:', error);
-                        throw new Error('Benzin fiyatı alınamadı');
-                    }
-                }
-        
-        
-                async function calculateCost2() {
-                    var distance = parseFloat(document.getElementById('distance').value);
-                    const city = 'ISTANBUL';
-        
-                    try {
-                        const fuelPrices = await fetchFuelPrice(city);
-                        const pricePerLiter = parseFloat(fuelPrices['44,90']['Kursunsuz_95(Excellium95)_TL/lt']);
-                        const litersPerKilometer = 0.08; // Örnek olarak ortalama araç için yakıt tüketimi
-                        const totalCost = distance * litersPerKilometer * pricePerLiter;
-        
-                        if (isNaN(distance) || distance <= 0) {
-                            document.getElementById('result').textContent = "Lütfen geçerli bir mesafe giriniz.";
-                        } else {
-                            document.getElementById('result').textContent = `Toplam yakıt maliyeti: ${totalCost.toFixed(2)} TL`;
-                        }
-                    } catch (error) {
-                        console.error('Hesaplama hatası:', error);
-                        document.getElementById('result').textContent = "Bir hata oluştu, lütfen daha sonra tekrar deneyin.";
-                    }
-                }
-                    */
     </script>
-
+    
 
 
 </body>
